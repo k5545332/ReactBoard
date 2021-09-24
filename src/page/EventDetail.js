@@ -39,7 +39,7 @@ function EventDetail(props) {
 
   const GetData = useCallback(()=>{
     const GetEventData = ()=>{
-      const url = `https://localhost:5001/event/detail/${id}`;
+      const url = `http://localhost:9001/event/detail/${id}`;
       fetch(url,
         {
           method: "GET",

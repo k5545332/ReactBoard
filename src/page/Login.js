@@ -14,7 +14,7 @@ const Login = ()=>{
 
 
   const submitlogin = ()=>{
-    const url = "https://localhost:5001/login/submit";
+    const url = "http://localhost:9001/login/submit";
     fetch(url,
     {
       method: "POST",

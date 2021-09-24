@@ -21,7 +21,7 @@ function EventUpdate(props) {
   const id = props.match.params.id;
   const GetData = useCallback(()=>{
     const GetEventUpdateData = ()=>{
-      const url = `https://localhost:5001/event/update/${id}`;
+      const url = `http://localhost:9001/event/update/${id}`;
       fetch(url,
         {
           method: "GET",
@@ -49,7 +49,7 @@ function EventUpdate(props) {
   },[])
 
   const submitEventUpdateData = ()=>{
-    const url = `https://localhost:5001/event/update/${id}/submit`;
+    const url = `http://localhost:9001/event/update/${id}/submit`;
     fetch(url,
     {
       method: "Put",

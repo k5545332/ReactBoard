@@ -18,7 +18,7 @@ function ThemeAdd() {
 
 
   const submitThemeCreateData = ()=>{
-    const url = "https://localhost:5001/theme/add/submit";
+    const url = "http://localhost:9001/theme/add/submit";
     fetch(url,
     {
       method: "POST",
