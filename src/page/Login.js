@@ -14,7 +14,7 @@ const Login = ()=>{
 
 
   const submitlogin = ()=>{
-    const url = "http://localhost:9001/login/submit";
+    const url = "https://littlewhalecoreapiboard.herokuapp.com/login/submit";
     fetch(url,
     {
       method: "POST",

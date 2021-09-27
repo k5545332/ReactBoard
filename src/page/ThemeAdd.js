@@ -18,7 +18,7 @@ function ThemeAdd() {
 
 
   const submitThemeCreateData = ()=>{
-    const url = "http://localhost:9001/theme/add/submit";
+    const url = "https://littlewhalecoreapiboard.herokuapp.com/theme/add/submit";
     fetch(url,
     {
       method: "POST",

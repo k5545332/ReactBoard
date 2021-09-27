@@ -21,7 +21,7 @@ function EventAdd() {
 
   const GetData = useCallback(()=>{
     const GetEventCreateData = ()=>{
-      const url = "http://localhost:9001/event/add";
+      const url = "https://littlewhalecoreapiboard.herokuapp.com/event/add";
       fetch(url,
         {
           method: "GET",
@@ -48,7 +48,7 @@ function EventAdd() {
   },[])
 
   const submitEventCreateData = ()=>{
-    const url = "http://localhost:9001/event/add/submit";
+    const url = "https://littlewhalecoreapiboard.herokuapp.com/event/add/submit";
     fetch(url,
     {
       method: "POST",
