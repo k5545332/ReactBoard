@@ -24,7 +24,7 @@ function UserUpdate(props) {
   const id = props.match.params.id;
   const GetData = useCallback(()=>{
     const GetUserUpdateData = ()=>{
-      const url = `https://littlewhalecoreapiboard.herokuapp.com/user/update/${id}`;
+      const url = `http://localhost:9001/user/update/${id}`;
       fetch(url,
         {
           method: "GET",
@@ -52,7 +52,7 @@ function UserUpdate(props) {
   },[])
 
   const submitUserUpdateData = ()=>{
-    const url = `https://littlewhalecoreapiboard.herokuapp.com/user/update/${id}/submit`;
+    const url = `http://localhost:9001/user/update/${id}/submit`;
     fetch(url,
     {
       method: "Put",

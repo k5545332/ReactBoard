@@ -17,7 +17,7 @@ function ThemeUpdate(props) {
   const id = props.match.params.id;
   const GetData = useCallback(()=>{
     const GetThemeUpdateData = ()=>{
-      const url = `https://littlewhalecoreapiboard.herokuapp.com/theme/update/${id}`;
+      const url = `http://localhost:9001/theme/update/${id}`;
       fetch(url,
         {
           method: "GET",
@@ -37,7 +37,7 @@ function ThemeUpdate(props) {
   },[])
 
   const submitThemeUpdateData = ()=>{
-    const url = `https://littlewhalecoreapiboard.herokuapp.com/theme/update/${id}/submit`;
+    const url = `http://localhost:9001/theme/update/${id}/submit`;
     fetch(url,
     {
       method: "Put",

@@ -30,7 +30,7 @@ function UserIndex() {
   const GetData = useCallback(()=>{
     const GetUserListData = async()=>{
       return new Promise(resolve =>{
-        const url = "https://littlewhalecoreapiboard.herokuapp.com/user/index";
+        const url = "http://localhost:9001/user/index";
         fetch(url,
           {
             method: "GET",
@@ -64,7 +64,7 @@ function UserIndex() {
 
   const UserDelete = async(id)=>{
     return new Promise(resolve =>{
-      const url = `https://littlewhalecoreapiboard.herokuapp.com/user/delete/${id}`;
+      const url = `http://localhost:9001/user/delete/${id}`;
       
       fetch(url,
       {

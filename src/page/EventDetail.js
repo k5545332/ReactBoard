@@ -39,7 +39,7 @@ function EventDetail(props) {
 
   const GetData = useCallback(()=>{
     const GetEventData = ()=>{
-      const url = `https://littlewhalecoreapiboard.herokuapp.com/event/detail/${id}`;
+      const url = `http://localhost:9001/event/detail/${id}`;
       fetch(url,
         {
           method: "GET",
