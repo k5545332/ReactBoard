@@ -51,7 +51,7 @@ function ThemeAdd() {
         <InputEnabled title="啟用" id="Enabled" name="Enabled" lg={12} setData={setThemeCreateData}/>
       </Row>
       <Row>
-        <InputText title="姓名" id="Name" name="Name" setData={setThemeCreateData}/>
+        <InputText title="名稱" id="Name" name="Name" setData={setThemeCreateData}/>
       </Row>
       <Row nogutter={true}>
         <InputSubmit eventhandler={submitThemeCreateData} title="資料存檔" />
