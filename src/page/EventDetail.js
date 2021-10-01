@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import { Row, Col} from 'react-grid-system';
+import '../component/Input/ckeditorContextStyle.css';
+
 
 const NewRow = styled(Row)`
   margin-bottom: 50px;
@@ -39,7 +41,7 @@ function EventDetail(props) {
 
   const GetData = useCallback(()=>{
     const GetEventData = ()=>{
-      const url = `https://littlewhalecoreapiboard.herokuapp.com/event/detail/${id}`;
+      const url = `https://localhost:5001/event/detail/${id}`;
       fetch(url,
         {
           method: "GET",
@@ -83,7 +85,7 @@ function EventDetail(props) {
       </NewRow>
       <NewRow nogutter={true}>
         <Col lg={12}>
-          <ContentDesTag>{data.ContentDes}</ContentDesTag>
+          <ContentDesTag dangerouslySetInnerHTML={{__html:data.ContentDes}} className="ck-content"/>
         </Col>
       </NewRow>
     </>

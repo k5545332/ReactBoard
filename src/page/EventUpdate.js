@@ -21,7 +21,7 @@ function EventUpdate(props) {
   const id = props.match.params.id;
   const GetData = useCallback(()=>{
     const GetEventUpdateData = ()=>{
-      const url = `https://littlewhalecoreapiboard.herokuapp.com/event/update/${id}`;
+      const url = `https://localhost:5001/event/update/${id}`;
       fetch(url,
         {
           method: "GET",
@@ -30,6 +30,10 @@ function EventUpdate(props) {
           }
         })
       .then((response)=>{
+        if (!response.ok) {
+          localStorage.removeItem("LoginToken");
+          window.location.href = "/"; 
+        }
         var apidata = response.json();
         return apidata;
       })
@@ -49,7 +53,7 @@ function EventUpdate(props) {
   },[])
 
   const submitEventUpdateData = ()=>{
-    const url = `https://littlewhalecoreapiboard.herokuapp.com/event/update/${id}/submit`;
+    const url = `https://localhost:5001/event/update/${id}/submit`;
     fetch(url,
     {
       method: "Put",
