@@ -32,7 +32,7 @@ function EventIndex() {
   const GetData = useCallback(()=>{
     const GetEventListData = async()=>{
       return new Promise(resolve =>{
-        const url = "https://localhost:5001/event/index";
+        const url = "https://littlewhalecoreapiboard.herokuapp.com/event/index";
         fetch(url,
           {
             method: "GET",
@@ -64,7 +64,7 @@ function EventIndex() {
 
   const EventDelete = async(id)=>{
     return new Promise(resolve =>{
-      const url = `https://localhost:5001/event/delete/${id}`;
+      const url = `https://littlewhalecoreapiboard.herokuapp.com/event/delete/${id}`;
       
       fetch(url,
       {

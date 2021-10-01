@@ -38,7 +38,7 @@ function InputTextArea(props) {
   
     _initRequest() {
       const xhr = this.xhr = new XMLHttpRequest();
-      xhr.open('POST', 'https://localhost:5001/event/add/image', true);
+      xhr.open('POST', 'https://littlewhalecoreapiboard.herokuapp.com/event/add/image', true);
       xhr.responseType = 'json';
       xhr.setRequestHeader('Authorization',`Bearer ${Token}`); // set your token here
     }

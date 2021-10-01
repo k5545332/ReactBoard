@@ -30,7 +30,7 @@ function ThemeIndex() {
   const GetData = useCallback(()=>{
     const GetThemeListData = async()=>{
       return new Promise(resolve =>{
-        const url = "https://localhost:5001/theme/index";
+        const url = "https://littlewhalecoreapiboard.herokuapp.com/theme/index";
         fetch(url,
           {
             method: "GET",
@@ -64,7 +64,7 @@ function ThemeIndex() {
 
   const ThemeDelete = async(id)=>{
     return new Promise(resolve =>{
-      const url = `https://localhost:5001/theme/delete/${id}`;
+      const url = `https://littlewhalecoreapiboard.herokuapp.com/theme/delete/${id}`;
       
       fetch(url,
       {

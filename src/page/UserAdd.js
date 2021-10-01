@@ -24,7 +24,7 @@ function UserAdd() {
 
   const GetData = useCallback(()=>{
     const GetUserCreateData = ()=>{
-      const url = "https://localhost:5001/user/add";
+      const url = "https://littlewhalecoreapiboard.herokuapp.com/user/add";
       fetch(url,
         {
           method: "GET",
@@ -51,7 +51,7 @@ function UserAdd() {
   },[])
 
   const submitUserCreateData = ()=>{
-    const url = "https://localhost:5001/user/add/submit";
+    const url = "https://littlewhalecoreapiboard.herokuapp.com/user/add/submit";
     fetch(url,
     {
       method: "POST",
