@@ -27,7 +27,6 @@ const TdTag = styled.td`
 
 function Td(props) {
   const { moblieTitle,...rest } = props
-  console.log(moblieTitle);
   return (
     <TdTag {...rest} moblieTitle={moblieTitle}>
       {props.children}

@@ -51,7 +51,6 @@ function EventDetail(props) {
         return apidata;
       })
       .then((apidata)=>{
-        console.log(apidata);
         setData(apidata);
       })
     }

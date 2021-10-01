@@ -9,6 +9,7 @@ import Confirm from '../component/Alert/Confirm';
 import Pagination from '../component/Pagination/Pagination';
 import React, { useState, useEffect, useCallback } from 'react';
 import {Link} from "react-router-dom";
+import InputSearch from '../component/Input/InputSearch';
 
 const option = {
   width: "15%",
@@ -16,6 +17,7 @@ const option = {
 
 function EventIndex() {
   const [data, setData] = useState({
+    datasback:[],
     datas:[],
     showdatas:[],
     titles:["主題分類","更新時間","文章標題","作者","點閱數"]
@@ -46,6 +48,7 @@ function EventIndex() {
           setData((preState)=>({
             ...preState,
             datas:apidata.EventDtos,
+            datasback:apidata.EventDtos
           }));
           return resolve();
         })
@@ -88,7 +91,24 @@ function EventIndex() {
   // useEffect(()=>{
   //   GetData();
   // },[GetData])
-
+  const SearchFilterHandler = (text)=>{
+    if (text.length>0) {
+      var newData = data.datas.filter(function(item){
+        if (item.Title.indexOf(text)>-1) {
+          return item;  
+        }
+      })
+      setData((preState)=>({
+        ...preState,
+        datas:newData,
+      }));
+    }else{
+      setData((preState)=>({
+        ...preState,
+        datas:data.datasback,
+      }));
+    }
+  }
   return (
     <>
       {
@@ -98,6 +118,7 @@ function EventIndex() {
           <OwnButton text="新增文章" link="#/EventAdd" color="red"/>
         )
       }
+      <InputSearch lg={3} sm={12} setData={SearchFilterHandler}/>
       <TableTag>
         <tbody>
           <TitleTrTag>
