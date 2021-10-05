@@ -1,4 +1,4 @@
-.ck.ck-editor__editable_inline {
+#root .ck.ck-editor__editable_inline {
   min-height: 500px;
   border-left: 1px solid #aaa;
   border-right: 1px solid #aaa;

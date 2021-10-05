@@ -22,10 +22,12 @@ const PTag = styled.p`
 
 const ContentDesTag = styled.p`
   border: 1px solid #999;
-  padding: 20px;
+  padding: 10px;
   border-radius:15px;
   white-space: pre-line;
   min-height:200px;
+  word-break: break-word;
+  line-height: 1.5;
 `;
 
 function EventDetail(props) {
