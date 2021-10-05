@@ -9,6 +9,7 @@ import Confirm from '../component/Alert/Confirm';
 import Pagination from '../component/Pagination/Pagination';
 import React, { useState, useEffect, useCallback } from 'react';
 import {Link} from "react-router-dom";
+import CheckJwtToken from '../component/CheckJwtToken';
 
 const option = {
   width: "15%",
@@ -27,6 +28,9 @@ function UserIndex() {
     title:""
   });
   const Token = localStorage.getItem("LoginToken");
+  if (Token === null) {
+    window.location.href = "/"; 
+  }
   const GetData = useCallback(()=>{
     const GetUserListData = async()=>{
       return new Promise(resolve =>{
@@ -91,7 +95,9 @@ function UserIndex() {
   // useEffect(()=>{
   //   GetData();
   // },[GetData])
-
+  useEffect(()=>{
+    CheckJwtToken();
+  },[])
   return (
     <>
       <OwnButton text="新增人員" link="#/User/Add" color="red"/>

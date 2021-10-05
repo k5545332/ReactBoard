@@ -3,6 +3,7 @@ import InputText from '../component/Input/InputText';
 import InputTextArea from '../component/Input/InputTextArea';
 import InputSubmit from '../component/Input/InputSubmit';
 import InputEnabled from '../component/Input/InputEnabled';
+import CheckJwtToken from '../component/CheckJwtToken';
 
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { Row } from 'react-grid-system';
@@ -18,7 +19,10 @@ function EventAdd() {
   });
   
   const Token = localStorage.getItem("LoginToken");
-
+  if (Token === null) {
+    window.location.href = "/"; 
+  }
+  
   const GetData = useCallback(()=>{
     const GetEventCreateData = ()=>{
       const url = "https://littlewhalecoreapiboard.herokuapp.com/event/add";
@@ -30,10 +34,6 @@ function EventAdd() {
           }
         })
       .then((response)=>{
-        if (!response.ok) {
-          localStorage.removeItem("LoginToken");
-          window.location.href = "/"; 
-        }
         var apidata = response.json();
         return apidata;
       })
@@ -79,6 +79,9 @@ function EventAdd() {
     GetData();
   },[GetData])
 
+  useEffect(()=>{
+    CheckJwtToken();
+  },[])
 
   return (
     <>

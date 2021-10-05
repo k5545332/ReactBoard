@@ -6,6 +6,7 @@ import InputEnabled from '../component/Input/InputEnabled';
 
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { Row } from 'react-grid-system';
+import CheckJwtToken from '../component/CheckJwtToken';
 
 
 function ThemeAdd() {
@@ -15,7 +16,9 @@ function ThemeAdd() {
   });
   
   const Token = localStorage.getItem("LoginToken");
-
+  if (Token === null) {
+    window.location.href = "/"; 
+  }
 
   const submitThemeCreateData = ()=>{
     const url = "https://littlewhalecoreapiboard.herokuapp.com/theme/add/submit";
@@ -40,7 +43,9 @@ function ThemeAdd() {
       }
     })
   }
-
+  useEffect(()=>{
+    CheckJwtToken();
+  },[])
 
   return (
     <>

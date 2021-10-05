@@ -6,6 +6,7 @@ import InputEnabled from '../component/Input/InputEnabled';
 import userInfoContext from './Login';
 import React, { useState, useEffect, useCallback, useContext  } from 'react';
 import { Row } from 'react-grid-system';
+import CheckJwtToken from '../component/CheckJwtToken';
 
 
 function ThemeUpdate(props) {
@@ -14,6 +15,9 @@ function ThemeUpdate(props) {
     Enabled:false,
   });
   const Token = localStorage.getItem("LoginToken");
+  if (Token === null) {
+    window.location.href = "/"; 
+  }
   const id = props.match.params.id;
   const GetData = useCallback(()=>{
     const GetThemeUpdateData = ()=>{
@@ -63,7 +67,9 @@ function ThemeUpdate(props) {
   useEffect(() => {
     GetData();
   },[GetData])
-
+  useEffect(()=>{
+    CheckJwtToken();
+  },[])
 
   return (
     <>

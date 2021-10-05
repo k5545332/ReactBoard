@@ -10,7 +10,7 @@ import Pagination from '../component/Pagination/Pagination';
 import React, { useState, useEffect, useCallback } from 'react';
 import {Link} from "react-router-dom";
 import InputSearch from '../component/Input/InputSearch';
-
+import CheckJwtToken from '../component/CheckJwtToken';
 const option = {
   width: "15%",
 };
@@ -91,6 +91,9 @@ function EventIndex() {
   // useEffect(()=>{
   //   GetData();
   // },[GetData])
+  useEffect(()=>{
+    CheckJwtToken();
+  },[])
   const SearchFilterHandler = (text)=>{
     if (text.length>0) {
       var newData = data.datas.filter(function(item){

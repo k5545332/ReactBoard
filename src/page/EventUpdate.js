@@ -6,6 +6,7 @@ import InputEnabled from '../component/Input/InputEnabled';
 import userInfoContext from './Login';
 import React, { useState, useEffect, useCallback, useContext  } from 'react';
 import { Row } from 'react-grid-system';
+import CheckJwtToken from '../component/CheckJwtToken';
 
 
 function EventUpdate(props) {
@@ -18,6 +19,9 @@ function EventUpdate(props) {
     ContentDes:"",
   });
   const Token = localStorage.getItem("LoginToken");
+  if (Token === null) {
+    window.location.href = "/"; 
+  }
   const id = props.match.params.id;
   const GetData = useCallback(()=>{
     const GetEventUpdateData = ()=>{
@@ -30,10 +34,6 @@ function EventUpdate(props) {
           }
         })
       .then((response)=>{
-        if (!response.ok) {
-          localStorage.removeItem("LoginToken");
-          window.location.href = "/"; 
-        }
         var apidata = response.json();
         return apidata;
       })
@@ -80,7 +80,9 @@ function EventUpdate(props) {
     GetData();
   },[GetData])
 
-
+  useEffect(()=>{
+    CheckJwtToken();
+  },[])
   return (
     <>
       <Row nogutter={true} justify="center">

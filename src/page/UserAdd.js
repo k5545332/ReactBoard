@@ -6,6 +6,7 @@ import InputEnabled from '../component/Input/InputEnabled';
 
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { Row } from 'react-grid-system';
+import CheckJwtToken from '../component/CheckJwtToken';
 
 
 function UserAdd() {
@@ -21,7 +22,9 @@ function UserAdd() {
   });
   
   const Token = localStorage.getItem("LoginToken");
-
+  if (Token === null) {
+    window.location.href = "/"; 
+  }
   const GetData = useCallback(()=>{
     const GetUserCreateData = ()=>{
       const url = "https://littlewhalecoreapiboard.herokuapp.com/user/add";
@@ -77,7 +80,9 @@ function UserAdd() {
   useEffect(() => {
     GetData();
   },[GetData])
-
+  useEffect(()=>{
+    CheckJwtToken();
+  },[])
 
   return (
     <>

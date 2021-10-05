@@ -42,7 +42,7 @@ const Login = ()=>{
   return (
     <>
       <InputText title="帳號" id="Account" name="Account" setData={setAccountAndPassword}/>
-      <InputPassword title="密碼" id="Password" name="Password" setData={setAccountAndPassword}/>
+      <InputPassword title="密碼" id="Password" name="Password" setData={setAccountAndPassword} eventhandler={submitlogin}/>
       <InputSubmit eventhandler={submitlogin} title="送出" />
     </>
   );
