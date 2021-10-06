@@ -97,7 +97,7 @@ function EventIndex() {
   const SearchFilterHandler = (text)=>{
     if (text.length>0) {
       var newData = data.datas.filter(function(item){
-        if (item.Title.indexOf(text)>-1) {
+        if (item.Title.toLowerCase().indexOf(text.toLowerCase())>-1) {
           return item;  
         }
       })
