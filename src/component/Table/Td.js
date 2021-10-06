@@ -4,7 +4,7 @@ const TdTag = styled.td`
   padding: 20px 0 20px 10px;
   @media (max-width:768px){
     display: block;
-    padding-left: 100px;
+    padding-left: 90px;
     position: relative;
     border: 1px solid #000;
     border-collapse: separate;

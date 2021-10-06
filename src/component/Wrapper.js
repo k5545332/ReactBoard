@@ -3,7 +3,7 @@ import React from 'react';
 import NavBar from './Nav';
 import Header from './Header';
 import { ScreenClassProvider , Container , Row , Col } from 'react-grid-system';
-import bg2 from '../img/bg02.png';
+import bg2 from '../img/oceanbg.jpg';
 
 const NewContainer = styled(Container)`
   background: url(${bg2}) repeat 0 0 / 100%;
@@ -33,6 +33,7 @@ function Wrapper(props) {
           <Col lg={10}>
             <NavBar />
             <Content>
+              <a href='https://.pngtree.com/free-backgrounds' style={{display:'none'}}>來自的免費背景照片 .pngtree.com/</a>
               {props.children}
             </Content>
           </Col>

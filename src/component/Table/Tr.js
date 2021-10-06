@@ -5,8 +5,12 @@ const TrTag = styled.tr`
   @media (max-width:768px){
     display: block;
     margin-bottom: 20px;
+    
+    &:nth-child(even){
+      background: rgba(255,255,255,0.8);
+    }
     &:nth-child(odd){
-      background: rgba(200,200,200,0.5);
+      background: rgba(244,244,244,0.8);
     }
   }
 `;

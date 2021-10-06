@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import bg1 from '../img/bg01.jpg';
+import bg1 from '../img/littlewhalebg.jpg';
 // import {Link} from "react-router-dom";
 
 const HeaderTag = styled.header`
@@ -17,6 +17,7 @@ const HeaderTag = styled.header`
   h1{
     font-size: 72px;
     margin-top:-50px;
+    text-shadow: 0.3vw -0.2vw #fff;
     @media (max-width: 768px) {
       font-size: 36px;
     }
@@ -27,7 +28,7 @@ function Header() {
   return (
     <HeaderTag>
       <h1>
-        Little Whale's 佈告欄
+        Little Whale's Blog
       </h1>
     </HeaderTag>
   );
