@@ -8,7 +8,7 @@ const NavDiv = styled.nav`
   background: #f2efee;
   display: flex;
   align-items: center;
-  box-shadow: 10px 5px 5px #ccc;
+  box-shadow: 3px 3px 3px #ccc;
   >div{
     width: 20%;
     height: 60px;

@@ -11,11 +11,17 @@ const NewContainer = styled(Container)`
 
 const Content = styled.div`
   padding:20px;
-  background:#fff;
-  box-shadow: 10px 5px 5px #ccc;
+  box-shadow: 3px 3px 3px #ccc;
   min-height:500px;
+  background: rgba(255,255,255,0.9);
+
   @media (max-width:768px){
     background: url(${bg2}) repeat 0 0 / 100%;
+    >div{
+      background: rgba(255,255,255,0.9);
+      border-radius: 15px;
+      padding:10px;
+    }
   }
 `;
 
@@ -33,8 +39,10 @@ function Wrapper(props) {
           <Col lg={10}>
             <NavBar />
             <Content>
-              <a href='https://.pngtree.com/free-backgrounds' style={{display:'none'}}>來自的免費背景照片 .pngtree.com/</a>
-              {props.children}
+              <div>
+                <a href='https://.pngtree.com/free-backgrounds' style={{display:'none'}}>來自的免費背景照片 .pngtree.com/</a>
+                {props.children}
+              </div>
             </Content>
           </Col>
         </Row>
