@@ -12,8 +12,9 @@ function InputSearch(props) {
   }
 
   return (
-    <InputDiv {...rest}>
-      <input type="text" onChange={handleChange} value={searchText} />
+    <InputDiv style={{position: 'relative'}} {...rest}>
+      <input type="text" onChange={handleChange} value={searchText} placeholder="搜尋標題" />
+      <span style={{position: 'absolute',right:'10px',top:0,bottom:0,margin:'auto',display:'flex',alignItems:'center',userSelect:'none',pointerEvents:'none'}}>🔍</span>
     </InputDiv>
   );
 }
