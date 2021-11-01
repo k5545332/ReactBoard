@@ -130,7 +130,7 @@ function ThemeIndex() {
               </TdTag>
               <TdTag style={{ display:"flex", justifyContent:'space-around' }} moblieTitle="管理">
                 <OwnButton text="編輯" link={`#/Theme/Update/${value.Themeid}`} />
-                <OwnButton text="刪除" link={void(0)} Themehandler={()=>{setConfirmShow(true);setDelDataInfo({id:value.Themeid,title:value.Title})}} color="red" />
+                <OwnButton text="刪除" link={void(0)} eventhandler={()=>{setConfirmShow(true);setDelDataInfo({id:value.Themeid,title:value.Title})}} color="red" />
               </TdTag>
             </TrTag>
           ))}

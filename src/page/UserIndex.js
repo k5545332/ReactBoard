@@ -136,7 +136,7 @@ function UserIndex() {
               </TdTag>
               <TdTag style={{ display:"flex", justifyContent:'space-around' }} moblieTitle="管理">
                 <OwnButton text="編輯" link={`#/User/Update/${value.Userid}`} />
-                <OwnButton text="刪除" link={void(0)} Userhandler={()=>{setConfirmShow(true);setDelDataInfo({id:value.Userid,title:value.Title})}} color="red" />
+                <OwnButton text="刪除" link={void(0)} eventhandler={()=>{setConfirmShow(true);setDelDataInfo({id:value.Userid,title:value.Title})}} color="red" />
               </TdTag>
             </TrTag>
           ))}
